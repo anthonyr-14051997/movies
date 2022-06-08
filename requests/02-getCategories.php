@@ -13,3 +13,10 @@ while ($a = $req_get_cat->fetch(PDO::FETCH_ASSOC)) {
 
 // Réaliser une requête qui permet d'afficher le nombre de films par catégories
 
+$req_select_nbr = "SELECT COUNT(categories_id) FROM `categories_has_infos_movies` WHERE infos_movies_id";
+$req_get_nbr = $db->query($req_select_nbr);
+
+while ($a = $req_get_nbr->fetch(PDO::FETCH_ASSOC)) {
+    echo $a . "\n";
+}
+
